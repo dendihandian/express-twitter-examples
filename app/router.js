@@ -1,4 +1,4 @@
-import { timeline, rawTimeline } from './controllers/TwitterController'
+import { timeline, rawTimeline } from './controllers/TimelineController'
 
 const router = function(app) {
   app.route('/timeline/:screen_name')
