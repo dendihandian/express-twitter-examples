@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/dendihandian/express-twitter-examples#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "twitter": "^1.7.1"
   },
   "devDependencies": {
     "nodemon": "^1.18.4"
