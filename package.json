@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/dendihandian/express-twitter-examples/issues"
   },
-  "homepage": "https://github.com/dendihandian/express-twitter-examples#readme"
+  "homepage": "https://github.com/dendihandian/express-twitter-examples#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  }
 }
