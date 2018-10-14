@@ -34,7 +34,7 @@ const getTweets = async (screenName, filter=true) => {
   } else {
     result = {
       status: false,
-      error: error
+      error: tweets
     }
   }
 
