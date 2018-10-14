@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js --exec babel-node -e js"
   },
   "repository": {
     "type": "git",
@@ -18,10 +18,13 @@
   },
   "homepage": "https://github.com/dendihandian/express-twitter-examples#readme",
   "dependencies": {
+    "dotenv": "^6.1.0",
     "express": "^4.16.4",
     "twitter": "^1.7.1"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "nodemon": "^1.18.4"
   }
 }
