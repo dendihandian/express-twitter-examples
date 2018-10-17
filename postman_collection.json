@@ -6,48 +6,166 @@
 	},
 	"item": [
 		{
-			"name": "Timeline",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {},
-				"url": {
-					"raw": "{{express_server}}/{{screen_name}}/timeline",
-					"host": [
-						"{{express_server}}"
-					],
-					"path": [
-						"{{screen_name}}",
-						"timeline"
-					]
+			"name": "User",
+			"item": [
+				{
+					"name": "Profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{express_server}}/profile",
+							"host": [
+								"{{express_server}}"
+							],
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tweets",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{express_server}}/tweets",
+							"host": [
+								"{{express_server}}"
+							],
+							"path": [
+								"tweets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Timeline",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{express_server}}/timeline",
+							"host": [
+								"{{express_server}}"
+							],
+							"path": [
+								"timeline"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Favorites",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{express_server}}/favorites",
+							"host": [
+								"{{express_server}}"
+							],
+							"path": [
+								"favorites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Followings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{express_server}}/followings",
+							"host": [
+								"{{express_server}}"
+							],
+							"path": [
+								"followings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Followers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{express_server}}/followers",
+							"host": [
+								"{{express_server}}"
+							],
+							"path": [
+								"followers"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "Timeline (Raw)",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {},
-				"url": {
-					"raw": "{{express_server}}/{{screen_name}}/timeline?raw=1",
-					"host": [
-						"{{express_server}}"
-					],
-					"path": [
-						"{{screen_name}}",
-						"timeline"
-					],
-					"query": [
-						{
-							"key": "raw",
-							"value": "1"
+			"name": "Account",
+			"item": [
+				{
+					"name": "Timeline",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{express_server}}/{{screen_name}}/timeline",
+							"host": [
+								"{{express_server}}"
+							],
+							"path": [
+								"{{screen_name}}",
+								"timeline"
+							]
 						}
-					]
+					},
+					"response": []
+				},
+				{
+					"name": "Timeline (Raw)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{express_server}}/{{screen_name}}/timeline?rawTweets=1",
+							"host": [
+								"{{express_server}}"
+							],
+							"path": [
+								"{{screen_name}}",
+								"timeline"
+							],
+							"query": [
+								{
+									"key": "rawTweets",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		}
 	]
 }
