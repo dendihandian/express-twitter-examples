@@ -1,0 +1,53 @@
+{
+	"info": {
+		"_postman_id": "32544e17-b2e5-42e4-8395-60bfb8750192",
+		"name": "NodeJS Twitter Examples",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Timeline",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{express_server}}/{{screen_name}}/timeline",
+					"host": [
+						"{{express_server}}"
+					],
+					"path": [
+						"{{screen_name}}",
+						"timeline"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Timeline (Raw)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{express_server}}/{{screen_name}}/timeline?raw=1",
+					"host": [
+						"{{express_server}}"
+					],
+					"path": [
+						"{{screen_name}}",
+						"timeline"
+					],
+					"query": [
+						{
+							"key": "raw",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
