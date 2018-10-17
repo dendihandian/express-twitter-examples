@@ -1,20 +1,6 @@
 import client from '../components/TwitterClient'
-import moment from 'moment'
+import { filterTweets } from '../helper'
 
-// helper functions
-const filterTweets = async (tweets) => {
-  let filteredTweets = []
-  tweets.forEach((tweet) => {
-    filteredTweets.push({
-      id: tweet.id,
-      text: tweet.text,
-      date: moment(tweet.created_at).format('Y-M-D HH:mm:ss')
-    })
-  })
-  return filteredTweets
-}
-
-// exported functions
 const getProfileByScreenName = async (screenName) => {
   let profile = { name: 'dummy' }
   return profile
@@ -30,7 +16,7 @@ const getTweetsByScreenName = async (screenName, rawResult=false) => {
       data: (rawResult) ? tweets : await filterTweets (tweets)
     }
   } catch (e) {
-    console.log(e)
+    // console.log(e)
     result = {
       status: false,
       error: e
