@@ -7,13 +7,12 @@ const accountTweets = async (req, res) => {
   const result = await getTweetsByScreenName(screenName, rawResult)
   if (result.status) {
     res.status(200).json({
-      message: 'User Tweets',
+      message: 'Account Tweets',
       data: result.data
     })
   } else {
     res.status(500).json({
-      message: result.error.message,
-      error: result.error
+      message: result.error.message
     })
   }
 }

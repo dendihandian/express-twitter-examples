@@ -1,5 +1,6 @@
 import { userProfile, userTweets, userTimeline, userFavorites, userFollowings, userFollowers } from './controllers/UserController'
 import { accountTweets } from './controllers/AccountController'
+import { searchTweets } from './controllers/GeneralController'
 
 const router = function(app) {
   // User
@@ -15,6 +16,10 @@ const router = function(app) {
     .get(userTimeline)
   app.route('/tweets')
     .get(userTweets)
+
+  // General
+  app.route('/search')
+    .get(searchTweets)
 
   // Account
   app.route('/:screen_name/timeline')
