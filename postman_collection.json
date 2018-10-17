@@ -166,6 +166,58 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{express_server}}/search?keyword={{search_keyword}}",
+					"host": [
+						"{{express_server}}"
+					],
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "keyword",
+							"value": "{{search_keyword}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search (Raw)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{express_server}}/search?keyword={{search_keyword}}&rawTweets=1",
+					"host": [
+						"{{express_server}}"
+					],
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "keyword",
+							"value": "{{search_keyword}}"
+						},
+						{
+							"key": "rawTweets",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
