@@ -10,8 +10,7 @@ const searchTweets = async (req, res) => {
     })
   } else {
     res.status(500).json({
-      message: result.error.message,
-      error: result.error
+      message: result.message,
     })
   }
 }

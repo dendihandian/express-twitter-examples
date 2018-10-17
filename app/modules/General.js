@@ -1,9 +1,13 @@
-const searchTweetsByKeyword = async (keyword) => {
+import client from '../components/TwitterClient'
+import { filterTweets } from '../helper'
+
+const searchTweetsByKeyword = async (keyword, rawResult = false) => {
   let result
   try {
+    const tweets = await client.get('search/tweets', {q: keyword})
     result = {
       status: true,
-      data: [{ text: `tweet ${keyword} #1` }, { text: `tweet ${keyword} #2` }]
+      data: (rawResult) ? tweets : await filterTweets (tweets.statuses)
     }
   } catch (e) {
     result = {
