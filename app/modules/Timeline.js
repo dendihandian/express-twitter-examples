@@ -1,4 +1,4 @@
-import client from '../components/TwitterClient.js'
+import client from '../components/TwitterClient'
 
 const filterTweets = async (tweets) => {
   let filteredTweets = []
