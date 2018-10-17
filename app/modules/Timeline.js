@@ -20,9 +20,8 @@ const getTweets = async (screenName, filter=true) => {
 
   let result
 
-  const tweets = await client.get('statuses/user_timeline', params)
-
-  if (tweets) {
+  try {
+    const tweets = await client.get('statuses/user_timeline', params)
     result = {
       status: true,
       data: {
@@ -30,11 +29,10 @@ const getTweets = async (screenName, filter=true) => {
         tweets: (filter) ? await filterTweets(tweets) : tweets
       }
     }
-
-  } else {
+  } catch (e) {
     result = {
       status: false,
-      error: tweets
+      error: e
     }
   }
 
