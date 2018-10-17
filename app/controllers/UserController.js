@@ -1,10 +1,18 @@
-import { getProfile, getTweets, getFavorites, getFollowings, getFollowers } from '../modules/User'
+import { getProfile, getTweets, getTimeline, getFavorites, getFollowings, getFollowers } from '../modules/User'
 
 const userProfile = async (req, res) => {
   const profile = await getProfile()
   res.status(200).json({
     message: 'User Profile',
     data: profile
+  })
+}
+
+const userTimeline = async (req, res) => {
+  const timeline = await getTimeline()
+  res.status(200).json({
+    message: 'User Timeline',
+    data: timeline
   })
 }
 
@@ -40,4 +48,4 @@ const userFollowers = async (req, res) => {
   })
 }
 
-module.exports = { userProfile, userTweets, userFavorites, userFollowings, userFollowers }
+module.exports = { userProfile, userTweets, userTimeline, userFavorites, userFollowings, userFollowers }

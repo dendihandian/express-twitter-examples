@@ -6,8 +6,14 @@ const getProfile = async () => {
   return profile
 }
 
+const getTimeline = async () => {
+  let timeline = [{ text: 'You Idol #1 Tweet' }, { text: 'You Idol #2 Tweet' }]
+  return timeline
+}
+
 const getTweets = async () => {
   let tweets = [{ text: 'This is my tweet #1' }, { text: 'This is my tweet #2' }]
+  return tweets
 }
 
 const getFavorites = async () => {
@@ -25,4 +31,4 @@ const getFollowers = async () => {
   return followers
 }
 
-module.exports = { getProfile, getTweets, getFavorites, getFollowings, getFollowers }
+module.exports = { getProfile, getTimeline, getTweets, getFavorites, getFollowings, getFollowers }

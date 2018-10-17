@@ -1,4 +1,4 @@
-import { userProfile, userTweets, userFavorites, userFollowings, userFollowers } from './controllers/UserController'
+import { userProfile, userTweets, userTimeline, userFavorites, userFollowings, userFollowers } from './controllers/UserController'
 import { timeline } from './controllers/TimelineController'
 import { favorites } from './controllers/AccountController'
 
@@ -12,6 +12,8 @@ const router = function(app) {
     .get(userFollowings)
   app.route('/profile')
     .get(userProfile)
+  app.route('/timeline')
+    .get(userTimeline)
   app.route('/tweets')
     .get(userTweets)
 
