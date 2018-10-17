@@ -1,6 +1,5 @@
 import { userProfile, userTweets, userTimeline, userFavorites, userFollowings, userFollowers } from './controllers/UserController'
-import { timeline } from './controllers/TimelineController'
-import { favorites } from './controllers/AccountController'
+import { accountTweets } from './controllers/AccountController'
 
 const router = function(app) {
   // User
@@ -19,7 +18,7 @@ const router = function(app) {
 
   // Account
   app.route('/:screen_name/timeline')
-    .get(timeline)
+    .get(accountTweets)
 }
 
 module.exports = router
