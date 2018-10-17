@@ -2,7 +2,8 @@ import { searchTweetsByKeyword } from '../modules/General'
 
 const searchTweets = async (req, res) => {
   const keyword = req.query.keyword
-  const result = await searchTweetsByKeyword(keyword)
+  const rawResult = (req.query.rawTweets && req.query.rawTweets == 1) ? true : false
+  const result = await searchTweetsByKeyword(keyword, rawResult)
   if (result.status) {
     res.status(200).json({
       message: 'Tweets Search Result',
