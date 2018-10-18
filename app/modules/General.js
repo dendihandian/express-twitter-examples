@@ -18,4 +18,21 @@ const searchTweetsByKeyword = async (keyword, rawResult = false) => {
   return result
 }
 
-module.exports = { searchTweetsByKeyword }
+const querySearchTweets = async (body, rawResult = false) => {
+  let result
+  try {
+    const tweets = await client.get('search/tweets', body)
+    result = {
+      status: true,
+      data: (rawResult) ? tweets : await filterTweets (tweets.statuses)
+    }
+  } catch (e) {
+    result = {
+      status: false,
+      message: e.message
+    }
+  }
+  return result
+}
+
+module.exports = { searchTweetsByKeyword, querySearchTweets }
