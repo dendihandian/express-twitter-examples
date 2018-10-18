@@ -1,4 +1,4 @@
-import { getProfile, getTweets, getTimeline, getFavorites, getFollowings, getFollowers } from '../modules/User'
+import { getProfile, getTweets, getTimeline, getFavorites, getFollowings, getFollowers, statusUpdate } from '../modules/User'
 
 const userProfile = async (req, res) => {
   const profile = await getProfile()
@@ -48,4 +48,21 @@ const userFollowers = async (req, res) => {
   })
 }
 
-module.exports = { userProfile, userTweets, userTimeline, userFavorites, userFollowings, userFollowers }
+const userUpdateStatus = async (req, res) => {
+  const body = {
+    status: req.body.text
+  }
+  const result = await statusUpdate(body)
+  if (result.status) {
+    res.status(201).json({
+      message: 'User Status Updated',
+      data: result.data
+    })
+  } else {
+    res.status(500).json({
+      message: result.message,
+    })
+  }
+}
+
+module.exports = { userProfile, userTweets, userTimeline, userFavorites, userFollowings, userFollowers, userUpdateStatus }

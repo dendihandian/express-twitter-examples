@@ -1,4 +1,4 @@
-// import client from '../components/TwitterClient'
+import client from '../components/TwitterClient'
 // import moment from 'moment'
 
 const getProfile = async () => {
@@ -31,4 +31,21 @@ const getFollowers = async () => {
   return followers
 }
 
-module.exports = { getProfile, getTimeline, getTweets, getFavorites, getFollowings, getFollowers }
+const statusUpdate = async (body) => {
+  let result
+  try {
+    const tweet = await client.post('statuses/update', body)
+    result = {
+      status: true,
+      data: tweet
+    }
+  } catch (e) {
+    result = {
+      status: false,
+      message: e.message
+    }
+  }
+  return result
+}
+
+module.exports = { getProfile, getTimeline, getTweets, getFavorites, getFollowings, getFollowers, statusUpdate }
