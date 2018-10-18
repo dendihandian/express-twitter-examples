@@ -115,6 +115,32 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"text\": \"I updatedd my status from node-twitter API, visit my repository at http://github.com/dendihandian/node-twitter-examples\"\n}"
+						},
+						"url": {
+							"raw": "{{express_server}}/update",
+							"host": [
+								"{{express_server}}"
+							],
+							"path": [
+								"update"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
